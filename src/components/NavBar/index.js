@@ -1,22 +1,31 @@
 import React from "react";
-import StyledNavBar, { MenuIcon, MenuItems, StyledMenuItem } from "./style";
+import PropTypes from "prop-types";
+import StyledNavBar, { StyledMenuItem, MenuIcon, MenuItems } from "./style";
 import Badge from "components/Badge";
 import Avatar from "components/Avatar";
-import ProfileImage from "assets/images/face-male-1.jpg"
-import { faCommentDots, faFolder, faStickyNote } from "@fortawesome/free-regular-svg-icons";
-import { faCog, faEllipsisH, faUsers } from "@fortawesome/free-solid-svg-icons";
-import "styled-components/macro"
+
+import profileImage from "assets/images/face-male-1.jpg";
+import {
+  faCommentDots,
+  faUsers,
+  faFolder,
+  faStickyNote,
+  faEllipsisH,
+  faCog,
+} from "@fortawesome/free-solid-svg-icons";
+
+import "styled-components/macro";
 
 function NavBar({ ...rest }) {
   return (
     <StyledNavBar {...rest}>
-      <Avatar src={ProfileImage} status="online"></Avatar>
+      <Avatar src={profileImage} status="online" />
       <MenuItems>
-        <MenuItem showBadge active icon={faCommentDots}></MenuItem>
-        <MenuItem icon={faUsers}></MenuItem>
-        <MenuItem icon={faFolder}></MenuItem>
-        <MenuItem icon={faStickyNote}></MenuItem>
-        <MenuItem icon={faEllipsisH}></MenuItem>
+        <MenuItem showBadge active icon={faCommentDots} />
+        <MenuItem icon={faUsers} />
+        <MenuItem icon={faFolder} />
+        <MenuItem icon={faStickyNote} />
+        <MenuItem icon={faEllipsisH} />
         <MenuItem
           icon={faCog}
           css={`
@@ -37,9 +46,11 @@ function MenuItem({ icon, active, showBadge, ...rest }) {
         </Badge>
       </a>
     </StyledMenuItem>
-  )
+  );
 }
 
+NavBar.propTypes = {};
 
 export default NavBar;
-export { MenuItem }
+
+export { MenuItem };

@@ -1,9 +1,18 @@
-import styled from 'styled-components'
-import CareDown from 'assets/icons/caret_down.svg'
+import styled, {
+    css,
+} from 'styled-components'
+import CaretDown from 'assets/icons/caret_down.svg'
+import CaretDown2 from 'assets/icons/caretDown2.svg'
+
+const typeVariants = {
+    form: css`
+        background-image: url(${CaretDown2});
+    `,
+}
 
 const StyledSelect = styled.select`
     appearance: none;
-    background-image: url(${CareDown});
+    background-image: url(${CaretDown});
     background-repeat: no-repeat;
     background-position: right center;
     background-color: transparent;
@@ -13,6 +22,10 @@ const StyledSelect = styled.select`
         theme.normal};
     color: ${({ theme }) =>
         theme.grayDark};
+
+    ${({ type }) =>
+        type && typeVariants[type]}
+
     ::-ms-expand {
         display: none;
     }

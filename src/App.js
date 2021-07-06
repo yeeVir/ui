@@ -1,15 +1,13 @@
-import React from 'react';
-// import logo from './logo.svg';
-import Button from './Button';
-import useColorSwitch from './useColorSwitch';
-import './App.css';
+import React from "react";
+import ChatApp from "components/ChatApp";
+import { ThemeProvider } from "styled-components";
+import theme from "theme";
 
 function App() {
-  const [state, handleButton1, handleButton2] = useColorSwitch();
   return (
-    <div>
-      
-    </div>
+    <ThemeProvider theme={theme}>
+      <ChatApp />
+    </ThemeProvider>
   );
 }
 
